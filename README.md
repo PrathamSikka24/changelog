@@ -2,7 +2,7 @@
 
 ### Overview
 ***
-The Virtual Event Starter Kit simplifies organizing and executing virtual events within your organization. Built with React for the frontend, Next.js for the backend, and utilizing Redis and Supabase for data storage, this platform ensures reliability and scalability. From customizable stages to interactive sessions, sponsor expos, and ticketing systems, it offers essential tools for seamless event management and enhanced attendee engagement. Recent enhancements include support for live virtual events, expanding capabilities to host diverse event formats. Getting started is easy with straightforward cloning and deployment options, along with integration instructions for preferred CMS and authentication mechanisms.
+The Changelog is a tool designed to track the evolution of software applications from their initial deployment through all subsequent updates, modifications, and feature additions. It's built on the principle that understanding an application's history is crucial for developers, users, and stakeholders. This project supports Markdown, enabling documentation that's both accessible and easy to navigate. It leverages a contemporary stack comprising React, Bun.js, Bao.js, and CockroachDB to deliver a robust platform for tracking the evolution of software projects.
 
 ### Features
 ***
