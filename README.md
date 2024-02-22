@@ -40,7 +40,7 @@ Our application is containerized using **[Docker](https://www.docker.com/)**. Do
  ### High Level Design
  ---
 
-### ![HLD Design Diagram for Changelog](https://github.com/PrathamSikka24/changelog/assets/116445216/caef8318-3e5c-429f-b471-cbf886455e26)
+![HLD Design Diagram for Changelog](https://github.com/PrathamSikka24/changelog/assets/116445216/93e4225a-d464-4ff0-ad63-25e7a514d951)
 
 
 ## Working
