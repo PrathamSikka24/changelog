@@ -1,11 +1,25 @@
 import Bao from "baojs";
-import { getChangelogs, getChangelogById } from './src/db/db'; // Adjust the path as necessary
-
+import { getChangelogs, getChangelogById, insertChangelog } from './src/db/db';
+import { server } from "typescript";
 const app = new Bao();
+interface ChangelogRequestBody {
+    author: string;
+    date: string;
+    heading: string;
+    description: string;
+}
+
+
+
+
+app.get("/", (ctx) => {
+    let sendMessage='Welcome to the Changelog Application!'
+    return ctx.sendJson( {status: 200}, );
+});
 
 app.get("/changelog", async (ctx) => {
-    const changelogs = await getChangelogs();
-    return ctx.sendJson(changelogs);
+    const changelog = await getChangelogs();
+    return ctx.sendJson(changelog);
 });
 
 app.get("/changelog/:id", async (ctx) => {
@@ -17,6 +31,19 @@ app.get("/changelog/:id", async (ctx) => {
     }
 });
 
-const PORT = 3000;
-app.listen({port: PORT});
-console.log(`Server running on port ${PORT}`);
+app.post("/api/changelog", async (ctx) => {
+    try {
+        const { author, date, heading, description }: ChangelogRequestBody = await ctx.req.json();
+        const result = await insertChangelog(author, date, heading, description);
+        return ctx.sendJson({result}, {status: 200});
+    } catch (err) {
+        let errorMessage = "An error occurred";
+        if (err instanceof Error) {
+            errorMessage = err.message;
+        }
+        return ctx.sendJson({ error: errorMessage }, {status: 500});
+    }
+});
+
+console.log("Server running on http://localhost:5000");
+app.listen({port: 5000});
